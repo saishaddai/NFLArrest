@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">NFLArrest</string>
+
+    <string name="connection_error">There\'s a connection error. No statistics can be brought from NFL Arrest</string>
+    <string name="connection_error_detail">There\'s a connection error. No statistics can be brought from NFL Arrest\nDetail: %1$s</string>
+    <string name="chart_title_top_crimes">Top Crimes</string>
 </resources>
