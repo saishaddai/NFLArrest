@@ -1,6 +1,7 @@
 package com.saishaddai.nflarrest.retrofit
 
 import com.saishaddai.nflarrest.model.NFArrestModels
+import io.reactivex.Single
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -24,6 +25,13 @@ interface NFLArrestAPI {
                      @Query("end_date") endDate: String?,
                      @Query("limit") limit: Int?,
                      @Query("start_pos") startPos: Int?) : Call<List<NFArrestModels.Crime>>
+
+    // Second version of getTop Crime using Singler class to make ot match with an RX Java observable
+    @GET("crime")
+    fun getTopCrimes2(@Query("start_date") startDate: String?,
+                     @Query("end_date") endDate: String?,
+                     @Query("limit") limit: Int?,
+                     @Query("start_pos") startPos: Int?) : Single<List<NFArrestModels.Crime>>
 
 
 

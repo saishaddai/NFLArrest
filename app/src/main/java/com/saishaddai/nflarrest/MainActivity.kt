@@ -16,6 +16,7 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import com.saishaddai.nflarrest.model.NFArrestModels
+//import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 
 
 class MainActivity : AppCompatActivity() {
@@ -27,7 +28,11 @@ class MainActivity : AppCompatActivity() {
 
         val retrofit = Retrofit.Builder()
             .baseUrl("http://nflarrest.com/api/v1/")
-            .addConverterFactory(GsonConverterFactory.create()).build()
+            .addConverterFactory(GsonConverterFactory.create())
+            //.addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+            .build()
+
+        //
 
         nflArrestAPI = retrofit.create(NFLArrestAPI::class.java)
         getCrimes()
@@ -74,7 +79,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         val pieDataSet = PieDataSet(pieEntries, getString(R.string.chart_title_top_crimes))
-        pieDataSet.colors = COLORFUL_COLORS
+        pieDataSet.colors = GREY_COLORS
         val pieData = PieData(pieDataSet)
 
         Log.d(TAG, "setting values in the chart")
@@ -102,6 +107,20 @@ class MainActivity : AppCompatActivity() {
             Color.rgb(245, 199, 0),
             Color.rgb(106, 150, 31),
             Color.rgb(179, 100, 53)
+        )
+
+
+        private val GREY_COLORS = mutableListOf(
+            Color.rgb(193, 193, 193),
+            Color.rgb(102, 102, 102),
+            Color.rgb(199, 199, 199),
+            Color.rgb(31, 31, 31),
+            Color.rgb(53, 53, 53),
+            Color.rgb(0, 0, 0),
+            Color.rgb(22, 22, 22),
+            Color.rgb(44, 44, 44),
+            Color.rgb(130, 130, 130),
+            Color.rgb(200, 200, 200)
         )
 
         private val TAG = MainActivity::class.java.simpleName

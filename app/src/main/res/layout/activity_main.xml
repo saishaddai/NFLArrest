@@ -9,8 +9,10 @@
         tools:context=".MainActivity">
 
 
-    <android.support.v4.widget.NestedScrollView android:layout_width="match_parent"
-                                                android:layout_height="match_parent">
+    <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
         <TextView
                 android:id="@+id/textErrorMessage"
                 android:layout_width="wrap_content"
@@ -23,16 +25,17 @@
 
     </android.support.v4.widget.NestedScrollView>
 
-    <LinearLayout android:layout_width="match_parent" android:layout_height="500dp"
-                  app:layout_constraintBottom_toBottomOf="parent"
-                  app:layout_constraintLeft_toLeftOf="parent"
-                  app:layout_constraintRight_toRightOf="parent"
-                  app:layout_constraintTop_toTopOf="parent">
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
         <com.github.mikephil.charting.charts.PieChart
                 android:id="@+id/crimeChart"
                 android:layout_width="match_parent"
-                android:tooltipText="hollo"
                 android:layout_height="match_parent">
 
         </com.github.mikephil.charting.charts.PieChart>
